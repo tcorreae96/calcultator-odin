@@ -1,0 +1,54 @@
+#container {
+	margin: 2rem;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 0.2rem solid black;
+	height: 40rem;
+	width: 30rem;
+	border-radius: 2%;
+}
+
+#buttons {
+	display: flex;
+	justify-content: space-around;
+	border: 0.1em solid black;
+	height: 32rem;
+	border-radius: 2%;
+}
+
+#display {
+	display: flex;
+	justify-content: start;
+	border: 0.1rem solid black;
+	border-radius: 2%;
+}
+
+#screen {
+	font-size: 5rem;
+}
+
+.button-col5 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.button-col3 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.small-btn {
+	font-size: 2rem;
+	height: 2em;
+	width: 2em;
+}
+
+.big-btn {
+	font-size: 2rem;
+	height: 5em;
+	width: 2em;
+}
