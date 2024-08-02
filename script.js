@@ -1,7 +1,8 @@
 const screenDisplay = document.querySelector("#screen");
 const buttons = document.querySelectorAll("button");
+let seq = [];
 
-buttons.forEach(button => button.addEventListener("click", handleClick))
+buttons.forEach(button => button.addEventListener("click", handleClick));
 
 function handleClick(e) {
 	switch (e.target.innerText) {
@@ -25,27 +26,36 @@ function handleClick(e) {
 			console.log("pressed C");
 			clearDisplay();
 			break;
-		case ",":
-			console.log("pressed ,");
-			break;
 		default:
 			updateDisplay(e.target.innerText);
-			console.log("default case");
 			break;
 	}
+	seq.push(e.target.innerText);
+	console.log(seq);
+	
 }
+
 function checkDisplay() {
 	const regex = /^0+/g;
 	screenDisplay.innerText = screenDisplay.innerText.replaceAll(regex, "");
+}
+
+function checkDot() {
+	const regex = /,.*(,)/;
+	if (screenDisplay.innerText.search(regex) > 0) {
+		screenDisplay.innerText = screenDisplay.innerText.substr(0, screenDisplay.innerText.length - 1);
+	}
 }
 
 function clearDisplay() {
 	screenDisplay.innerText = "0";
 }
 
+
 function updateDisplay(num) {
 	screenDisplay.innerText += num;
 	checkDisplay();
+	checkDot();
 	return num; 
 }
 
